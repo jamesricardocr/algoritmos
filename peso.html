@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Edad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #resultado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            margin-top: 15px;
+            transition: transform 0.3s ease-in-out;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calculadora de Edad</h2>
+        <label for="year">Ingresa tu año de nacimiento:</label>
+        <input type="number" id="year" placeholder="Ejemplo: 2000">
+        <button onclick="calcularEdad()">Calcular</button>
+        <p id="resultado"></p>
+        <img id="imagen" src="" alt="" style="display: none;">
+    </div>
+    
+    <script>
+        function calcularEdad() {
+            let añoNacimiento = document.getElementById("year").value;
+            let añoActual = new Date().getFullYear();
+            let edad = añoActual - añoNacimiento;
+            let resultadoTexto = "Tienes " + edad + " años.";
+            document.getElementById("resultado").innerText = resultadoTexto;
+            
+            let imagen = document.getElementById("imagen");
+            if (edad < 18) {
+                imagen.src = "https://via.placeholder.com/150?text=Joven";
+            } else if (edad < 60) {
+                imagen.src = "https://via.placeholder.com/150?text=Adulto";
+            } else {
+                imagen.src = "https://via.placeholder.com/150?text=Anciano";
+            }
+            imagen.style.display = "block";
+        }
+    </script>
+</body>
+</html>

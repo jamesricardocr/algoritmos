@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Algoritmos - Mortal Kombat</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: black; color: white; }
+        #mensaje { font-size: 20px; margin-top: 20px; }
+        .boton { padding: 10px; margin: 5px; font-size: 18px; cursor: pointer; background-color: red; color: white; border: none; }
+        .boton:hover { background-color: darkred; }
+        .container { display: flex; justify-content: center; gap: 50px; }
+        .fatalities { text-align: left; }
+        ul { list-style: none; padding: 0; }
+        li { margin: 5px 0; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <h1>Ejecuta un Fatality</h1>
+    <p>Presiona la combinación correcta para realizar un Fatality.</p>
+
+    <div class="container">
+        <div>
+            <button class="boton" onclick="ingresarBoton('⬇️')">⬇️ Abajo</button>
+            <button class="boton" onclick="ingresarBoton('➡️')">➡️ Derecha</button>
+            <button class="boton" onclick="ingresarBoton('⬆️')">⬆️ Arriba</button>
+            <button class="boton" onclick="ingresarBoton('⬅️')">⬅️ Izquierda</button>
+            <button class="boton" onclick="ingresarBoton('⚡')">⚡ Golpe</button>
+        </div>
+        
+        <div class="fatalities">
+            <h2>Secuencias de Fatalities:</h2>
+            <ul>
+                <li>🔥 Scorpion: ⬇️ ➡️ ⬆️ ⚡</li>
+                <li>❄️ Sub-Zero: ⬆️ ⬆️ ⬅️ ⚡</li>
+                <li>⚡ Raiden: ➡️ ➡️ ⬆️ ⚡</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="mensaje"></div>
+
+    <script>
+        const fatalities = {
+            "Scorpion🔥": ["⬇️", "➡️", "⬆️", "⚡"],
+            "Sub-Zero❄️": ["⬆️", "⬆️", "⬅️", "⚡"],
+            "Raiden⚡": ["➡️", "➡️", "⬆️", "⚡"]
+        };
+        
+        let entradaJugador = [];
+
+        function ingresarBoton(boton) {
+            entradaJugador.push(boton);
+
+            for (let personaje in fatalities) {
+                if (entradaJugador.length === fatalities[personaje].length) {
+                    if (JSON.stringify(entradaJugador) === JSON.stringify(fatalities[personaje])) {
+                        document.getElementById("mensaje").innerHTML = `¡Fatality de ${personaje}!`;
+                        return;
+                    }
+                }
+            }
+            
+            if (entradaJugador.length >= 4) {
+                document.getElementById("mensaje").innerHTML = "Fallaste, intenta de nuevo.";
+                entradaJugador = [];
+            }
+        }
+    </script>
+
+</body>
+</html>

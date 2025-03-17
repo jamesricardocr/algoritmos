@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalla Pokémon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+
+        h2 {
+            color: #ffcc00;
+            text-shadow: 2px 2px 4px #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pokemon-card {
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .pokemon-card:hover {
+            transform: scale(1.1);
+        }
+
+        .pokemon-card img {
+            padding: 2rem;
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        button {
+            background: #ff4444;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #cc0000;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .battle-animation {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>⚔️ ¡Batalla Pokémon! ⚔️</h2>
+    
+    <div class="container">
+        <div class="pokemon-card">
+            <label for="pokemon1">Jugador 1</label>
+            <select id="pokemon1" onchange="actualizarImagen(1)">
+                <option value="Pikachu">Pikachu</option>
+                <option value="Charizard">Charizard</option>
+                <option value="Bulbasaur">Bulbasaur</option>
+                <option value="Dito">Dito</option>
+                <option value="Mewtwo">Mewtwo</option>
+            </select>
+            <br>
+            <img id="img1" src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pokémon 1">
+        </div>
+        
+        <div class="pokemon-card">
+            <label for="pokemon2">Jugador 2</label>
+            <select id="pokemon2" onchange="actualizarImagen(2)">
+                <option value="Pikachu">Pikachu</option>
+                <option value="Charizard">Charizard</option>
+                <option value="Bulbasaur">Bulbasaur</option>
+                <option value="Dito">Dito</option>
+                <option value="Mewtwo">Mewtwo</option>
+            </select>
+            <br>
+            <img id="img2" src="https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif" alt="Pokémon 2">
+        </div>
+    </div>
+
+    <button onclick="batalla()">🔥 ¡Luchar! 🔥</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function actualizarImagen(jugador) {
+            let seleccion = document.getElementById(`pokemon${jugador}`).value;
+            let imagen = document.getElementById(`img${jugador}`);
+            
+            let imagenes = {
+                "Pikachu": "https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif",
+                "Charizard": "https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif",
+                "Bulbasaur": "https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif",
+                "Dito": "https://img.pokemondb.net/sprites/black-white/anim/normal/ditto.gif",
+                "Mewtwo": "https://img.pokemondb.net/sprites/black-white/anim/normal/mewtwo.gif"
+            };
+
+            imagen.src = imagenes[seleccion];
+        }
+
+        function batalla() {
+            let ataques = {
+                "Pikachu": 55,
+                "Charizard": 84,
+                "Bulbasaur": 49,
+                "Dito": 10,
+                "Mewtwo": 1000
+            };
+
+            let poke1 = document.getElementById("pokemon1").value;
+            let poke2 = document.getElementById("pokemon2").value;
+
+            let ataque1 = ataques[poke1];
+            let ataque2 = ataques[poke2];
+
+            let resultado = "";
+
+            if (ataque1 > ataque2) {
+                resultado = `🏆 ${poke1} gana la batalla 🏆`;
+            } else if (ataque1 < ataque2) {
+                resultado = `🏆 ${poke2} gana la batalla 🏆`;
+            } else {
+                resultado = "⚔️ Es un empate ⚔️";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+
+            // Agrega animación a las imágenes
+            document.getElementById("img1").classList.add("battle-animation");
+            document.getElementById("img2").classList.add("battle-animation");
+
+            setTimeout(() => {
+                document.getElementById("img1").classList.remove("battle-animation");
+                document.getElementById("img2").classList.remove("battle-animation");
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
