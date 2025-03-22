@@ -1,31 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creador de Pokémon</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    html {
+        font-size: 10px;
+        font-family: "Lato";
+        box-sizing: border-box;
+    }
+    body {
+        background-image: url("./img1.jpeg");
+        background-position: center;
+        background-repeat : no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    h1 {
+        font-size: 3.2rem;
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem #c5c5c56d;
+        width: 25rem;
+        margin: auto;
+        border-radius: 1rem;
+        background-color: #f6f6f6;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 3rem 0;
+        justify-content: center;
+        align-items: center;
+    }
+    input, select, button {
+        display: block;
+        width: 19rem;
+        height: 3.9rem;
+        color: #000;
+        padding-left: 1rem;
+        font-family: "Lato";
+    }
+    select, button {
+        width: 20rem;
+    }
+    button {
+        background-color: rgb(253, 206, 63);
+        border-radius: 1rem;
+        padding-left: 0;
+        border: none;
+    }
+    select {
+        border-radius: 1rem;
+    }
+</style>
 <body>
-    <h1>🌟 Creador de Pokémon 🌟</h1>
-
+    <h1>⭐ Creador de Pokémon ⭐</h1>
     <div class="container">
-        <input type="text" id="nombre" placeholder="Nombre del Pokémon">
-        <select id="tipo">
-            <option value="fire">🔥 Fuego</option>
-            <option value="water">💧 Agua</option>
-            <option value="grass">🌿 Planta</option>
-            <option value="electric">⚡ Eléctrico</option>
-        </select>
-        <input type="number" id="ataque" placeholder="Ataque (1-100)">
-        <input type="number" id="defensa" placeholder="Defensa (1-100)">
-        <button id="crear">Crear Pokémon</button>
-        <button id="reset">🗑 Borrar Pokémon</button>
+        <form class="form">
+            <input type="text" placeholder="Nombre de Pokémon">
+            <select>
+                <option value="Fuego">🔥 Fuego</option>
+                <option value="Agua">💧 Agua</option>
+                <option value="Planta">🌱 Planta</option>
+                <option value="Electrico">⛈️ Electrico</option>
+                <option value="Normal">🤚 Normal</option>
+                <option value="Bicho">🐜 Bicho</option>
+            </select>
+            <input type="number" min="1" max="100" placeholder="Ataque (1-100)">
+            <input type="number" min="1" max="100" placeholder="Defensa (1-100)">
+            <button>Crear Pokémon</button>
+            <button>🗑️ Borrar Pokémon</button>
+        </form>
     </div>
-
-    <h2>Lista de Pokémon</h2>
-    <div id="lista-pokemon"></div>
-
-    <script src="script.js"></script>
 </body>
 </html>
