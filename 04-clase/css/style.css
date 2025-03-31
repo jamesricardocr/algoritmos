@@ -1,4 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: "Roboto";
+}
 body {
-    color: #fff;
-    background-color: #1e1e1e;
+  color: #fff;
+  background-color: #1e1e1e;
   }
+h1, h2, span {
+  font-size: 6rem;
+}
+button {
+  background-color: #3EFFD8;
+  color: #000;
+  height: 5rem;
+  width: 14.5rem;
+  padding: 1rem, 3rem;
+  border: none;
+  border-radius: 1.7rem;
+  font-weight: 700;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+p {
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+li, a {
+  list-style: none;
+  text-decoration: none;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header__nav {
+  margin: 3.8rem 5.9rem 0 auto;
+}
+.header__nav--ul {
+  display: flex;
+  align-items: center;
+  gap: 5.8rem;
+}
+.header__nav--ul li, a {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #adadad;
+}
+.header__nav--ul .active {
+  background-color: #3EFFD8;
+  color: #363636;
+  padding:  0.9rem 1.6rem;
+  border-radius: 1rem;
+}
+.header__container {
+  display: flex;
+  margin: 8rem 5% 0;
+  gap: 7.8rem;
+} 
+.header__container--social--ul {
+  display: flex;
+  gap: 2rem;
+}
+main {
+  width: 90%;
+  margin: 11.5rem auto;
+}
+.main__about {
+  display: flex;
+  justify-content: space-between;
+  gap: 8.5rem;
+}
+.main__about--info--title span {
+  color: #3EFFD8;
+}
+.main__about--info p {
+  margin: 1.3rem 0 3.8rem;
+  width: 80%;
+}
+.main__about--info--buttons {
+  display: flex;
+  gap: 2.8rem;
+}
+.main__services {
+  display: flex;
+  margin: 10rem 0;
+  gap: 8.1rem;
+  flex-direction: column;
+}
+.main__services--info {
+  display: flex;
+  margin-left: auto;
+  width: 50%;
+  gap: 1.3rem;
+  flex-direction: column;
+}
+.main__services--info span {
+  color: #3EFFD8;
+}
