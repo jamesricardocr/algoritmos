@@ -39,12 +39,18 @@ li, a {
   justify-content: space-between;
 }
 .header__nav {
-  margin: 3.8rem 5.9rem 0 auto;
+  position: fixed;
+  background-color: #1e1e1e;
+  display: block;
+  width: 100vw;
+  margin-left: auto;
 }
 .header__nav--ul {
   display: flex;
   align-items: center;
   gap: 5.8rem;
+  justify-content: flex-end;
+  margin: 4rem 10% 2rem 0;
 }
 .header__nav--ul li, a {
   font-weight: 700;
@@ -59,7 +65,7 @@ li, a {
 }
 .header__container {
   display: flex;
-  margin: 8rem 5% 0;
+  margin: 15rem 10% 0;
   gap: 7.8rem;
 } 
 .header__container--social--ul {
@@ -67,7 +73,7 @@ li, a {
   gap: 2rem;
 }
 main {
-  width: 90%;
+  width: 80%;
   margin: 11.5rem auto;
 }
 .main__about {
@@ -101,4 +107,55 @@ main {
 }
 .main__services--info span {
   color: #3EFFD8;
+}
+.main__services--options {
+  display: flex;
+  margin: 8rem 0;
+  gap: 12.5rem;
+}
+.main_cards {
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+  height: 31rem;
+  background-color: #2D2D2D;
+  padding: 5rem 3rem;
+  gap: 2rem;
+  border-radius: 1.4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.main_cards h3 {
+  font-size: 2rem;
+  text-align: left;
+  border-bottom: 2px solid #ffffff5f;
+}
+.main_cards button {
+  height: 2rem;
+  width: 13rem;
+  font-size: 0.9rem;
+  align-items: center;
+  margin: 0 auto;
+}
+.main__products {
+  display: flex;
+  gap: 19rem;
+  align-items: flex-end;
+  justify-content: center;
+}
+.main__products--buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+/* ------------------------------------------- Estilos portafolio ---------------------------------------------*/
+
+.active a {
+  color: #000;
 }
