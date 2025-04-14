@@ -1,0 +1,17 @@
+{
+    "home": {
+      "seccion1": {
+        "titulo": "Bienvenido",
+        "descripcion": "Esta es la primera sección de la página."
+      },
+      "seccion2": {
+        "titulo": "Sobre nosotros",
+        "descripcion": "Aquí puedes conocer más sobre nuestro equipo."
+      },
+      "seccion3": {
+        "titulo": "Contacto",
+        "descripcion": "Contáctanos para más información."
+      }
+    }
+  }
+  
