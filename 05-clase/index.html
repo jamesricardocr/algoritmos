@@ -3,52 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Color Aleatorio</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 50px;
-      transition: background-color 0.3s;
-    }
-
-    #colorDisplay {
-      margin-top: 20px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
   <h1>Color de fondo aleatorio</h1>
   <button id="changeColorBtn">Cambiar color</button>
   <div id="colorDisplay">#FFFFFF</div>
-
-  <script>
-    const btn = document.getElementById('changeColorBtn');
-    const colorDisplay = document.getElementById('colorDisplay');
-
-    function generarColorAleatorio() {
-      const letras = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += letras[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
-
-    btn.addEventListener('click', () => {
-      const color = generarColorAleatorio();
-      document.body.style.backgroundColor = color;
-      colorDisplay.textContent = color;
-    });
-  </script>
-
+  <script src="./js/script.js"></script>
 </body>
 </html>
