@@ -109,6 +109,7 @@ main {
   color: #3EFFD8;
 }
 .main__services--options {
+  justify-content: center;
   display: flex;
   margin: 8rem 0;
   gap: 12.5rem;
