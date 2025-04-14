@@ -159,3 +159,21 @@ footer {
 .active a {
   color: #000;
 }
+.main__proyectos {
+  display: flex;
+  gap: 16rem;
+}
+.main__proyectos--images1 img {
+  width: 40rem;
+  height: 45rem;
+}
+.main__proyectos--proyecto1--title span {
+  font-size: 4rem;
+  color: #3EFFD8;
+}
+.main__proyectos--proyecto1 button {
+  margin-top: 3rem;
+}
+.main__proyectos--proyecto1--title {
+  margin-bottom: 1rem;
+}
